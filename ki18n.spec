@@ -1,10 +1,10 @@
-%define major 4
+%define major 5
 %define libname %mklibname KF5I18n %{major}
 %define devname %mklibname KF5I18n -d
 %define debug_package %{nil}
 
 Name: ki18n
-Version: 4.96.0
+Version: 4.97.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
@@ -55,7 +55,8 @@ mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
 %{_libdir}/plugins/kf5/ktranscript.so
 
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/*.so.%{major}
+%{_libdir}/*.so.%{version}
 
 %files -n %{devname}
 %{_includedir}/*
