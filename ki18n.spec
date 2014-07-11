@@ -4,9 +4,9 @@
 %define debug_package %{nil}
 
 Name: ki18n
-Version: 4.100.0
-Release: 2
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Version: 5.0.0
+Release: 1
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
 URL: http://kde.org/
 License: GPL
@@ -52,7 +52,7 @@ mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
 %find_lang ki18n%{major}
 
 %files -f ki18n%{major}.lang
-%{_libdir}/plugins/ktranscript.so
+%{_libdir}/plugins/kf5/ktranscript.so
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
