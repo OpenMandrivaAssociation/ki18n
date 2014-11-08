@@ -2,11 +2,12 @@
 %define libname %mklibname KF5I18n %{major}
 %define devname %mklibname KF5I18n -d
 %define debug_package %{nil}
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: ki18n
-Version: 5.3.0
+Version: 5.4.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
 URL: http://kde.org/
 License: GPL
@@ -53,6 +54,7 @@ mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
 
 %files -f ki18n%{major}.lang
 %{_libdir}/plugins/kf5/ktranscript.so
+%lang(fi) %{_datadir}/locale/fi/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@ijekavian/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@ijekavianlatin/LC_SCRIPTS
