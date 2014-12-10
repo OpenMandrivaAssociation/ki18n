@@ -13,6 +13,7 @@ URL: http://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake
+BuildRequires: ninja
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
@@ -41,19 +42,18 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %setup -q
-%cmake
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
-%make -C build
+ninja -C build
 
 %install
-%makeinstall_std -C build
-mkdir -p %{buildroot}%{_libdir}/qt5
-mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
+DESTDIR="%{buildroot}" ninja install -C build
 %find_lang ki18n%{major}
 
 %files -f ki18n%{major}.lang
-%{_libdir}/plugins/kf5/ktranscript.so
+%{_libdir}/qt5/plugins/kf5/ktranscript.so
 %lang(fi) %{_datadir}/locale/fi/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@ijekavian/LC_SCRIPTS
