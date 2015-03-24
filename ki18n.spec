@@ -17,6 +17,7 @@ BuildRequires: ninja
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
+BuildRequires: cmake(KF5DocTools)
 Requires: %{libname} = %{EVRD}
 
 %description
