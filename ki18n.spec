@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: ki18n
-Version: 5.8.0
+Version: 5.9.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
@@ -59,10 +59,12 @@ DESTDIR="%{buildroot}" ninja install -C build
 %{_libdir}/qt5/plugins/kf5/ktranscript.so
 %lang(fi) %{_datadir}/locale/fi/LC_SCRIPTS
 %lang(gd) %{_datadir}/locale/gd/LC_SCRIPTS
+%lang(ru) %{_datadir}/locale/ru/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@ijekavian/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@ijekavianlatin/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@latin/LC_SCRIPTS
+%lang(uk) %{_datadir}/locale/uk/LC_SCRIPTS
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
