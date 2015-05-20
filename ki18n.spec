@@ -20,6 +20,7 @@ BuildRequires: pkgconfig(Qt5Script)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: cmake(KF5DocTools)
 Requires: %{libname} = %{EVRD}
+Requires: openmandriva-kde-translation
 
 %description
 KDE Frameworks 5 internationalization framework.

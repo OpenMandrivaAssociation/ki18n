@@ -33,7 +33,7 @@ diff -urN ki18n-5.9.0/src/klocalizedstring.cpp ki18n-5.9.0-patched/src/klocalize
 +        if (testLanguage == s->codeLanguage) {
 +            return;
 +        }
-+        const KCatalog &catalog = getCatalog("mandriva-kde-translation", testLanguage);
++        const KCatalog &catalog = getCatalog("openmandriva-kde-translation", testLanguage);
 +        QString testMsgstr;
 +        if (!msgctxt.isNull() && !msgid_plural.isNull()) {
 +            testMsgstr = catalog.translate(msgctxt, msgid, msgid_plural, n);
