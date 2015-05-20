@@ -1,0 +1,42 @@
+diff -urN ki18n-5.9.0/src/klocalizedstring.cpp ki18n-5.9.0-patched/src/klocalizedstring.cpp
+--- ki18n-5.9.0/src/klocalizedstring.cpp	2015-04-04 22:05:57.000000000 +1000
++++ ki18n-5.9.0-patched/src/klocalizedstring.cpp	2015-04-28 00:45:34.389263068 +1000
+@@ -418,12 +418,37 @@
+     foreach (const QString &testLanguage, languages) {
+         // If code language reached, no catalog lookup is needed.
+         if (testLanguage == s->codeLanguage) {
+-            return;
++            break;
+         }
+         const KCatalog &catalog = getCatalog(domain, testLanguage);
+         QString testMsgstr;
+         if (!msgctxt.isNull() && !msgid_plural.isNull()) {
+             testMsgstr = catalog.translate(msgctxt, msgid, msgid_plural, n);
++        } else if (!msgid_plural.isNull()) {
++            testMsgstr = catalog.translate(msgid, msgid_plural, n);
++        } else if (!msgctxt.isNull()) {
++            testMsgstr = catalog.translate(msgctxt, msgid);
++        } else {
++            testMsgstr = catalog.translate(msgid);
++        }
++        if (!testMsgstr.isEmpty()) {
++            // Translation found.
++            language = testLanguage;
++            msgstr = testMsgstr;
++            return;
++        }
++    }
++
++    // Try translations from extra mandriva-kde-translation catalog if none was found
++    foreach (const QString &testLanguage, languages) {
++        // If code language reached, no catalog lookup is needed.
++        if (testLanguage == s->codeLanguage) {
++            return;
++        }
++        const KCatalog &catalog = getCatalog("mandriva-kde-translation", testLanguage);
++        QString testMsgstr;
++        if (!msgctxt.isNull() && !msgid_plural.isNull()) {
++            testMsgstr = catalog.translate(msgctxt, msgid, msgid_plural, n);
+         } else if (!msgid_plural.isNull()) {
+             testMsgstr = catalog.translate(msgid, msgid_plural, n);
+         } else if (!msgctxt.isNull()) {
