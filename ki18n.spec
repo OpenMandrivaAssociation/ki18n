@@ -18,6 +18,7 @@ BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Script)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: cmake(KF5DocTools)
 Requires: %{libname} = %{EVRD}
 Requires: openmandriva-kde-translation
