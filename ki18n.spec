@@ -67,6 +67,8 @@ Development files (Headers etc.) for %{name}.
 %lang(sr) %{_datadir}/locale/sr@latin/LC_SCRIPTS
 %lang(uk) %{_datadir}/locale/uk/LC_SCRIPTS
 %lang(ko) %{_datadir}/locale/ko/LC_SCRIPTS
+%lang(nb) %{_datadir}/locale/nb/LC_SCRIPTS
+%lang(nn) %{_datadir}/locale/nn/LC_SCRIPTS
 %lang(zh_CN) %{_datadir}/locale/zh_CN/LC_SCRIPTS
 
 %files -n %{libname}
