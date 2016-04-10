@@ -5,8 +5,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: ki18n
-Version: 5.20.0
-Release: 2
+Version: 5.21.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
 URL: http://kde.org/
@@ -58,6 +58,8 @@ Development files (Headers etc.) for %{name}.
 
 %files -f ki18n%{major}.lang
 %{_libdir}/qt5/plugins/kf5/ktranscript.so
+%lang(ca) %{_datadir}/locale/ca/LC_SCRIPTS
+%lang(ca@valencia) %{_datadir}/locale/ca@valencia/LC_SCRIPTS
 %lang(fi) %{_datadir}/locale/fi/LC_SCRIPTS
 %lang(gd) %{_datadir}/locale/gd/LC_SCRIPTS
 %lang(ru) %{_datadir}/locale/ru/LC_SCRIPTS
