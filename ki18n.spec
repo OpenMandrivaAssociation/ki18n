@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: ki18n
-Version: 5.33.0
+Version: 5.34.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
@@ -63,6 +63,7 @@ Development files (Headers etc.) for %{name}.
 %lang(ca@valencia) %{_datadir}/locale/ca@valencia/LC_SCRIPTS
 %lang(fi) %{_datadir}/locale/fi/LC_SCRIPTS
 %lang(gd) %{_datadir}/locale/gd/LC_SCRIPTS
+%lang(ja) %{_datadir}/locale/ja/LC_SCRIPTS
 %lang(ru) %{_datadir}/locale/ru/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr/LC_SCRIPTS
 %lang(sr) %{_datadir}/locale/sr@ijekavian/LC_SCRIPTS
