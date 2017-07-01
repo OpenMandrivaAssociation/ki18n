@@ -6,7 +6,7 @@
 
 Name: ki18n
 Version: 5.35.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
 URL: http://kde.org/
@@ -14,6 +14,8 @@ License: GPL
 Group: System/Libraries
 # (tpg) read extra translations from mandriva-kde-translation
 Patch0: ki18n-5.9.0-extra-catalog.patch
+# Fixes building polkit-kde-agent-1 with clang 5.0
+Patch1: ki18n-5.35.0-attribute-nodiscard-placement.patch
 BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Script)
