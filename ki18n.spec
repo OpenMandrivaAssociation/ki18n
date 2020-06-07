@@ -88,6 +88,20 @@ rm -rf %{buildroot}%{_libdir}/python2*
 %files -f ki18n%{major}.lang
 %{_datadir}/qlogging-categories5/*
 %{_libdir}/qt5/plugins/kf5/ktranscript.so
+%lang(ca) %{_datadir}/locale/ca/LC_SCRIPTS
+%lang(ca@valencia) %{_datadir}/locale/ca@valencia/LC_SCRIPTS
+%lang(fi) %{_datadir}/locale/fi/LC_SCRIPTS
+%lang(gd) %{_datadir}/locale/gd/LC_SCRIPTS
+%lang(ja) %{_datadir}/locale/ja/LC_SCRIPTS
+%lang(ru) %{_datadir}/locale/ru/LC_SCRIPTS
+%lang(sr) %{_datadir}/locale/sr/LC_SCRIPTS
+%lang(sr) %{_datadir}/locale/sr@ijekavian/LC_SCRIPTS
+%lang(sr) %{_datadir}/locale/sr@ijekavianlatin/LC_SCRIPTS
+%lang(sr) %{_datadir}/locale/sr@latin/LC_SCRIPTS
+%lang(uk) %{_datadir}/locale/uk/LC_SCRIPTS
+%lang(ko) %{_datadir}/locale/ko/LC_SCRIPTS
+%lang(nb) %{_datadir}/locale/nb/LC_SCRIPTS
+%lang(nn) %{_datadir}/locale/nn/LC_SCRIPTS
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
