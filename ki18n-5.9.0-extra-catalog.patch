@@ -1,6 +1,6 @@
-diff -up ki18n-5.57.0/src/klocalizedstring.cpp.0000~ ki18n-5.57.0/src/klocalizedstring.cpp
---- ki18n-5.57.0/src/klocalizedstring.cpp.0000~	2019-04-10 22:36:16.053806583 +0200
-+++ ki18n-5.57.0/src/klocalizedstring.cpp	2019-04-10 22:42:23.451360758 +0200
+diff -up ki18n-5.57.0/src/i18n/klocalizedstring.cpp.0000~ ki18n-5.57.0/src/i18n/klocalizedstring.cpp
+--- ki18n-5.57.0/src/i18n/klocalizedstring.cpp.0000~	2019-04-10 22:36:16.053806583 +0200
++++ ki18n-5.57.0/src/i18n/klocalizedstring.cpp	2019-04-10 22:42:23.451360758 +0200
 @@ -475,6 +475,13 @@ void KLocalizedStringPrivate::translateR
          } else {
              testMsgstr = catalog.translate(msgid);
