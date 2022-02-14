@@ -1,11 +1,11 @@
 %define major 5
 %define libname %mklibname KF5I18n %{major}
 %define devname %mklibname KF5I18n -d
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: ki18n
 Version: 5.91.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 internationalization framework
 URL: http://kde.org/
@@ -19,6 +19,7 @@ BuildRequires: pkgconfig(Qt5Script)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: pkgconfig(Qt5Quick)
+BuildRequires: pkgconfig(iso-codes)
 # For Python bindings
 BuildRequires: cmake(PythonModuleGeneration)
 BuildRequires: pkgconfig(python3)
@@ -58,7 +59,7 @@ Group: Documentation
 Suggests: %{devname} = %{EVRD}
 
 %description -n %{name}-devel-docs
-Developer documentation for %{name} for use with Qt Assistant
+Developer documentation for %{name} for use with Qt Assistant.
 
 %package -n python-%{name}
 Summary: Python bindings for %{name}
@@ -66,7 +67,7 @@ Group: System/Libraries
 Requires: %{libname} = %{EVRD}
 
 %description -n python-%{name}
-Python bindings for %{name}
+Python bindings for %{name}.
 
 %prep
 %autosetup -p1
