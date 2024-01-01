@@ -20,6 +20,7 @@ BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: pkgconfig(iso-codes)
+BuildRequires: gettext
 Obsoletes: python-%{name} < %{EVRD}
 # For QCH format docs
 BuildRequires: doxygen
@@ -42,6 +43,7 @@ KDE Frameworks 5 internationalization Library.
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
+Requires: gettext
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
